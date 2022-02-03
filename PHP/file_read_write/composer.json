@@ -1,0 +1,32 @@
+{
+    "name": "oleksii_dubinin/file_read_write",
+    "description": "coding challenge",
+    "authors": [
+        {
+            "name": "oleksii dubinin",
+            "email": "oleksii.dubinin@greatcontent.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "vlucas/phpdotenv": "^5.4",
+        "google/apiclient": "^2.0",
+        "symfony/console": "^5.4",
+        "monolog/monolog": "^2.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Command\\": "src/Command",
+            "Transport\\": "src/Transport",
+            "Domain\\": "src/Domain"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}

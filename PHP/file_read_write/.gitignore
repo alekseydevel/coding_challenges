@@ -1,0 +1,6 @@
+.idea
+/vendor/*
+/var/logs/*
+/var/output/*
+/var/input/*
+.phpunit.result.cache
