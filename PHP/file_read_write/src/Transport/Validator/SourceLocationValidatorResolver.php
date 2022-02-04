@@ -15,9 +15,9 @@ final class SourceLocationValidatorResolver
         $data = parse_url($path);
 
         if (!empty($data['scheme']) && in_array($data['scheme'], ['http', 'https'])) {
-            return new UrlLocationValidator($path);
+            return new UrlLocationValidator();
         }
 
-        return new LocalFileLocationValidator($path);
+        return new LocalFileLocationValidator();
     }
 }

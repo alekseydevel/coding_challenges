@@ -14,7 +14,7 @@ use Transport\Validator\SourceLocationValidatorResolver;
 class MigrateData extends Command
 {
     protected static $defaultName = 'app:migrate';
-    protected static $defaultDescription = 'Migrates XML data from given source and uploads into (hard-coded source :) )';
+    protected static $defaultDescription = 'Migrates XML data from given source and uploads into Google Spreadsheet)';
     private Readable $consumer;
     private Writeable $producer;
     private SourceLocationValidatorResolver $locationValidatorResolver;

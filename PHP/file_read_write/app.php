@@ -4,6 +4,7 @@ require __DIR__.'/vendor/autoload.php';
 
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use Transport\Export\GoogleSheetWriter;
 use Transport\Import\XmlProvider;
 use Transport\Export\LocalJsonWriter;
 use Symfony\Component\Console\Application;
@@ -32,6 +33,13 @@ if (strtolower($env) == 'dev') {
 }
 $application->add(
     new Command\MigrateData(
+        new XmlProvider(),
+        new GoogleSheetWriter(),
+        $log
+    )
+);
+$application->add(
+    new Command\MigrateDataLocal(
         new XmlProvider(),
         new LocalJsonWriter(
             new LocalFile(__DIR__.'/var/output/json_results'.time().'json')
