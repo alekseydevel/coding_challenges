@@ -16,15 +16,11 @@ class LocalJsonWriter implements Writeable
     public function write(array $data): void
     {
         $tmp = [];
+        // redundant foreach, but it was a preparation for key sanitizing (mentioned in Readme)
         foreach($data as $k => $v) {
             $tmp[$k] = $v;
         }
 
         file_put_contents($this->output->getDestination(), json_encode($tmp));
     }
-//
-//    private function getOutputFile(): string
-//    {
-//        return sprintf("%s%s.json", self::LOCAL_OUTPUT_DIR, time());
-//    }
 }
