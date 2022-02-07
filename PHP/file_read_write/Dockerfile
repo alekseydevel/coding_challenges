@@ -1,7 +1,5 @@
 FROM alpine:3.13
 
-ARG APP_TIMEZONE='Europe/Berlin'
-
 RUN apk --update-cache add \
     php7 \
     php7-cli \
@@ -43,10 +41,6 @@ RUN apk --update-cache add \
     vim \
     bash
 
-RUN ln -sf /usr/share/zoneinfo/${APP_TIMEZONE} /etc/localtime \
-    && echo "$APP_TIMEZONE" > /etc/timezone
-
-#COPY ./src /var/www/src
 COPY composer.* /var/www/
 COPY ./.env /var/www/.env
 
@@ -59,5 +53,3 @@ COPY ./src /var/www/src
 COPY ./tests /var/www/tests
 COPY ./var /var/www/var
 COPY ./phpunit.xml /var/www/phpunit.xml
-
-#RUN /var/www/vendor/phpunit/phpunit/phpunit

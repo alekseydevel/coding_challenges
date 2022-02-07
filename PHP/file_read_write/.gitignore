@@ -4,3 +4,5 @@
 /var/output/*
 /var/input/*
 .phpunit.result.cache
+config/*.json
+.env
