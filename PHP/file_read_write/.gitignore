@@ -3,6 +3,7 @@
 /var/logs/*
 /var/output/*
 /var/input/*
+!var/
 .phpunit.result.cache
 config/*.json
 .env
