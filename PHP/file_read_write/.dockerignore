@@ -17,6 +17,5 @@ bin/*
 !bin/console
 var/cache/*
 var/logs/*
-var/output/*
 .idea/
 ./tests/**/var/*
