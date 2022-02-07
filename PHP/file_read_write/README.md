@@ -32,10 +32,10 @@
    1 Pull the code on local machine   
    2 Build Docker image   
    3 Start interactively Docker container or run the needed commands (below)          
-        3.1 Execute tests `docker run -it -v $PWD:/var/www YOUR_IMAGE ./vendor/phpunit/phpunit/phpunit`   
-        3.2 Command itself:  `docker run -it -v $PWD:/var/www YOUR_IMAGE php app.php app:migrate IMPORT_FILE_SOURCE` (local source or remote)  
+        3.1 Execute tests `docker run -it -v $PWD/var/:/var/www/var/ YOUR_IMAGE ./vendor/phpunit/phpunit/phpunit`   
+        3.2 Command itself:  `docker run -it -v $PWD/var/:/var/www/var/ YOUR_IMAGE php app.php app:migrate IMPORT_FILE_SOURCE` (local source or remote)  
         *important*: the connection to Google SpreadSheets API failed. Details here: https://github.com/alekseydevel/coding_challenges/blob/master/PHP/file_read_write/src/Transport/Export/GoogleSheetWriter.php#L15  
-        3.3 Command for local testing: `docker run -it -v $PWD:/var/www YOUR_IMAGE php app.php app:migrate:local ./var/input/sample.xml`
+        3.3 Command for local testing: `docker run -it -v $PWD/var/:/var/www/var/ YOUR_IMAGE php app.php app:migrate:local ./var/input/sample.xml`
         and check `./var/output` folder for json export result
 
 #### Code description:

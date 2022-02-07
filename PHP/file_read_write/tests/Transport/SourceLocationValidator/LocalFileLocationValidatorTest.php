@@ -8,6 +8,29 @@ use Transport\Validator\LocalFileLocationValidator;
 
 class LocalFileLocationValidatorTest extends TestCase
 {
+    private string $testFileDir = __DIR__.'/var/';
+    private string $testFile = __DIR__.'/var/readable_file.txt';
+
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        if (!file_exists($this->testFile)) {
+            if (!file_exists($this->testFileDir)) {
+                mkdir($this->testFileDir, 0644, true);
+            }
+            touch($this->testFile);
+        }
+    }
+
+    public function tearDown(): void
+    {
+        parent::tearDown();
+        if (file_exists($this->testFile)) {
+            @unlink($this->testFile);
+            @rmdir($this->testFileDir);
+        }
+    }
 
     public function testShouldValidateIfFileExistsAndReadable()
     {

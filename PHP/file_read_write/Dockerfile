@@ -52,4 +52,5 @@ COPY ./config /var/www/config
 COPY ./src /var/www/src
 COPY ./tests /var/www/tests
 COPY ./var /var/www/var
+COPY ./app.php /var/www/app.php
 COPY ./phpunit.xml /var/www/phpunit.xml
