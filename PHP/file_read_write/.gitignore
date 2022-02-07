@@ -1,9 +1,7 @@
 .idea
 /vendor/*
-/var/logs/*
-/var/output/*
-/var/input/*
-!var/
+./var/logs/*.log
+./var/output/*.*
 .phpunit.result.cache
 config/*.json
 .env
