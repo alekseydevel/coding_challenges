@@ -8,7 +8,7 @@ import (
 
 var Logger ErrorLogger
 
-const Env = "dev" // "dev" for STDOUT
+const Env = "dev1" // "dev" for STDOUT
 const LogOutputFile = "./var/output/log.txt"
 
 func main() {
@@ -23,7 +23,7 @@ func main() {
 	importPath := args[1]
 	exportPath := args[2]
 
-	exporter, err := getExporter(exportPath)
+	exporter, err := getWriter(exportPath)
 	validateErrorAndExitIfNeeded(err)
 
 	reader, err := getReader(importPath)

@@ -16,7 +16,7 @@ type LocalXmlWriter struct {
 	filePath string
 }
 
-func getExporter(source string) (Writer, error) {
+func getWriter(source string) (Writer, error) {
 	if strings.Contains(source, ".json") {
 		return &LocalJsonWriter{filePath: source}, nil
 	}
