@@ -27,3 +27,10 @@ func TestGetImporterShouldReturnErrorIfNoSourceProvided(t *testing.T) {
 	assert.Equal(t, errors.New("filepath must be provided"), err)
 }
 
+func TestReaderShouldUnmarshalXmlIntoArrayOfStructs(t *testing.T) {
+	actualReader, err := getReader("")
+
+	assert.Equal(t, nil, actualReader)
+	assert.Equal(t, errors.New("filepath must be provided"), err)
+}
+

@@ -29,13 +29,13 @@ func main() {
 	reader, err := getReader(importPath)
 	validateErrorAndExitIfNeeded(err)
 
-	data, err := reader.read()
-	validateErrorAndExitIfNeeded(err)
+	app := Command{
+		logger: getLoggerInstance(),
+		reader: reader,
+		writer: exporter,
+	}
 
-	err = exporter.export(data)
-	validateErrorAndExitIfNeeded(err)
-
-	getLoggerInstance().logInfo("Finished with success")
+	app.exec()
 }
 
 func getLoggerInstance() ErrorLogger {
