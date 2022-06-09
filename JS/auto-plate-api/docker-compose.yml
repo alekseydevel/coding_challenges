@@ -1,0 +1,29 @@
+version: "3.0"
+services:
+  
+  app:
+    container_name: auto-plates-app-container
+    build:
+      context: ./
+      dockerfile: ./__docker/Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - $PWD:/app
+    ports:
+      - 8000:9999
+
+  db:
+    build:
+      dockerfile: ./__docker/postgres/Dockerfile
+      context: .
+    container_name: auto-plates-dubinin-db
+    ports:
+      - 5432:5432
+    user: postgres
+#    volumes:
+#      - auto-plates-dubinin-db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=plates

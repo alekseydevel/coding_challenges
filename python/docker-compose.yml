@@ -1,0 +1,35 @@
+version: "3.0"
+services:
+  
+  app:
+    container_name: dubinin-app-container
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - $PWD:/app
+    ports:
+      - 8000:8000
+
+  db:
+    build:
+      dockerfile: ./docker/postgre/Dockerfile
+      context: .
+    container_name: peter-park-dubinin-db
+    ports:
+      - 5432:5432
+    user: postgres
+    volumes:
+      - peter-park-dubinin-db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=plates
+
+volumes:
+  peter-park-dubinin-db:
+    external: false
+  pgadmin:
+    external: false

@@ -1,0 +1,20 @@
+{
+  "name": "coding-challenge-auto-plate-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./app/api.js",
+    "test": "NODE_OPTIONS='--experimental-vm-modules' jest"
+  },
+  "author": "oleksii.dubinin@gmail.com",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-promise-router": "^4.1.1",
+    "jest": "^28.1.1",
+    "nodemon": "^2.0.16",
+    "pg": "^8.7.3"
+  }
+}

@@ -1,0 +1,8 @@
+flask==2.1.2
+gunicorn>=19,<20F
+flask-inputs==0.3.0
+sqlalchemy==1.4.37
+Flask-SQLAlchemy
+psycopg2-binary
+jsonschema
+pytest
