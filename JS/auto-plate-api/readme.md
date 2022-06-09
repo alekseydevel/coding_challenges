@@ -24,6 +24,8 @@
   app will fail to connect cause PG will be not booted yet)
 
 ## ToDo:
+- env config files handling
+- some ToDos insde the files (singleton of DB client, etc)
 - Integration test with DB
 - Endpoint tests (request \ response)
 - Docker-compose delay for App boot
