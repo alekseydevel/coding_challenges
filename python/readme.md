@@ -1,12 +1,6 @@
-todo:
-1. flask app
-    1.1 two endpoints
-    1.3 transformer for list
-
-3. levenstein search + decide on storage
-    3.1 SQLAlchemy
-    3.2 Model definition
-
-4. docker / docker-compose
-
-5. update readme
+initial requirements can be found in JS/auto-plate-api repository.
+originally the task was to use SQLAlchemy + Flask, however I've struggled a lot with
+- libraries and their exceptions
+- configuring the "Class" way of SQL Models:
+  - sqlalchemy.ext issue
+  - failure on mapping the class to DB table in context of primary key (app could not boot)
