@@ -34,5 +34,5 @@
 
 1. After source code pulling: `docker-compose up --build` (please, note, that maybe should be reexecuted because of too fast "app" service booting. Improving is in ToDo)
 2. Endpoints to be used:
-   2.1 `curl -i localhost:8000/plate | jq` - list of plates
-   2.2 `curl -i -X POST -H "Content-Type: application/json" -d '{"plate": "M-AA123"}' localhost:8000/plate` - creation of the plate record
+   1. `curl -i localhost:8000/plate | jq` - list of plates
+   2. `curl -i -X POST -H "Content-Type: application/json" -d '{"plate": "M-AA123"}' localhost:8000/plate` - creation of the plate record
